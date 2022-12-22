@@ -1,1 +1,2 @@
-builds/Loops/*
+builds/Loops/*.exe
+builds/*.exe
