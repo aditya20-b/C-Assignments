@@ -20,7 +20,7 @@ To compile and run the exercises, follow these steps:
 
 You can use the `make` command to automatically compile all of the programs in this repository. To do this, you will need to have the `make` utility installed on your system.
 
-To use `make`, open a terminal or command prompt and navigate to the directory where the `Makefile` is located. Then, simply run the `make` command. This will compile all of the programs in the repository and create executables in the same directory.
+To use `make`, open a terminal or command prompt and navigate to the directory where the `Makefile` is located. Then, simply run the `make` command. This will compile all of the programs in the repository and create executables in the build folder in the root of the repository. The programs in the build folder are divided into folders based on the exercise they belong to.
 
 Alternatively, you can compile each program individually using the `gcc` command, as described in the "Setup" section above.
 
