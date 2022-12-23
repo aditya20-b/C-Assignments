@@ -1,2 +1,2 @@
-builds/Loops/*.exe
-builds/*.exe
+builds/loops/*.exe
+builds/strings/*.exe
