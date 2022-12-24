@@ -1,2 +1,4 @@
 builds/loops/*.exe
 builds/strings/*.exe
+builds/functions/*.exe
+builds/*.exe
