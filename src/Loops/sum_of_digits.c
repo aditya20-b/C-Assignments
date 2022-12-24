@@ -16,4 +16,3 @@ int main() {
     printf("The sum of digits is: %d", sum);
     return 0;
 }
-
