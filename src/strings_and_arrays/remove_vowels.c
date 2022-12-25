@@ -12,14 +12,12 @@ int string_length(const char *string) {
     return string_length;
 }
 
-int remove_vowels(char *string) {
+void remove_vowels(char *string) {
     int length = string_length(string);
     char vowels[] = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
-    int vowel_count = 0;
     for (int i=0; i<length; i++) {
         for (int j=0; j<10; j++) {
             if (string[i] == vowels[j]) {
-                vowel_count++;
                 for (int k=i; k<length; k++) {
                     string[k] = string[k+1];
                 }
@@ -28,13 +26,12 @@ int remove_vowels(char *string) {
             }
         }
     }
-    return vowel_count;
 }
 
 int main() {
     char string[100];
     printf("Enter a string: ");
     scanf(" %[^\n]s", string);
-    int vowel_count = remove_vowels(string);
+    remove_vowels(string);
     printf("The string after removing vowels is: %s", string);
 }
