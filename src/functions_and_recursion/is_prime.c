@@ -1,3 +1,7 @@
+/*
+Write a function that determines whether a given number is prime or not using recursion.
+*/
+
 #include <stdio.h>
 #include <stdbool.h>
 

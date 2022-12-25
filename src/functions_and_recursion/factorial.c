@@ -1,3 +1,7 @@
+/*
+Write a function that calculates the factorial of a given number using recursion.
+*/
+
 #include <stdio.h>
 
 int factorial(int n) {
