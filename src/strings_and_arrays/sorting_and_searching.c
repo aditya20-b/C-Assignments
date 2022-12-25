@@ -29,14 +29,19 @@ int array_length(int array_val[]) {
     return array_length;
 }
 
-void bubble_sort(int array_length, int array_val[]) {
+void bubble_sort(int array_length, int array_val[], int sorted_array[]) {
     int temp;
+    // Store the contents in the sorted array
+    for (int i=0; i<array_length; i++) {
+        sorted_array[i] = array_val[i];
+    }
+    // Sort the array
     for (int i=0; i<array_length; i++) {
         for (int j=0; j<array_length-i-1; j++) {
-            if (array_val[j] > array_val[j+1]) {
-                temp = array_val[j];
-                array_val[j] = array_val[j+1];
-                array_val[j+1] = temp;
+            if (sorted_array[j] > sorted_array[j+1]) {
+                temp = sorted_array[j];
+                sorted_array[j] = sorted_array[j+1];
+                sorted_array[j+1] = temp;
             }
         }
     }
@@ -53,28 +58,35 @@ int search_array(int array_length, int array_val[], int search_val) {
     return search_index;
 }
 
-int main() {
-    printf("Enter the length of the array: ");
-    int array_length_input;
-    scanf("%d", &array_length_input);
-    int array_val[array_length_input];
-    get_array_input(array_length_input, array_val);
-    printf("Do you want to sort the array? (y/n): ");
-    char sort_input;
-    scanf(" %c", &sort_input);
-    if (sort_input == 'y') {
-        bubble_sort(array_length_input, array_val);
-    }
-    printf("Enter the number that you want to search in the array: ");
+void search_or_sort(int array[], int array_length) {
     int search_input;
+    printf("Enter the number that you want to search in the array: ");
     scanf("%d", &search_input);
-    int search_index = search_array(array_length_input, array_val, search_input);
+    int search_index = search_array(array_length, array, search_input);
     if (search_index == -1) {
         printf("The element %d is not present in the array\n", search_input); 
     } else {
         printf("The element %d is present in the array at index %d\n", search_input, search_index);
     }
     printf("The array is: ");
-    print_array(array_length_input, array_val);
+    print_array(array_length, array);
+}
+
+int main() {
+    int array_length_input;
+    int array_val[array_length_input];
+    char sort_input;
+    int sorted_array[array_length_input];
+    printf("Enter the length of the array: ");
+    scanf("%d", &array_length_input);
+    get_array_input(array_length_input, array_val);
+    printf("Do you want to sort the array? (y/n): ");
+    scanf(" %c", &sort_input);
+    if (sort_input == 'y') {
+        bubble_sort(array_length_input, array_val, sorted_array);
+        search_or_sort(sorted_array, array_length_input);
+    } else {
+        search_or_sort(array_val, array_length_input);
+    }
 
 }
