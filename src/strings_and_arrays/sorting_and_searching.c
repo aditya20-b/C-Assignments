@@ -73,12 +73,13 @@ void search_or_sort(int array[], int array_length) {
 }
 
 int main() {
+    
     int array_length_input;
+    printf("Enter the length of the array: ");
+    scanf("%d", &array_length_input);
     int array_val[array_length_input];
     char sort_input;
     int sorted_array[array_length_input];
-    printf("Enter the length of the array: ");
-    scanf("%d", &array_length_input);
     get_array_input(array_length_input, array_val);
     printf("Do you want to sort the array? (y/n): ");
     scanf(" %c", &sort_input);
