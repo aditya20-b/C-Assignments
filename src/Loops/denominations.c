@@ -36,7 +36,7 @@ int main() {
     printf("Total number of currency notes:\n");
     printf("The number of 100 rupee notes is %d\n", count100);
     printf("The number of 50 rupee notes is %d\n", count50);
-    printf("The number of 10` rupee notes is %d\n", count10);
+    printf("The number of 10 rupee notes is %d\n", count10);
 
     return 0;
 }
