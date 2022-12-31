@@ -46,10 +46,10 @@ The program will check if the given string is a palindrome or not and print the 
 
 <div style="page-break-after: always"></div>
 
-## AIM
+## AIM:
 To get two matrixes as input from the user and perform matrix addition and matrix multiplication on them
 
-## ALGORITHM
+## ALGORITHM:
 1. Get the number of rows and columns for the first matrix from the user and store them in variables row_input1 and column_input1
 2. Create a 2D array called matrix1 with row_input1 rows and column_input1 columns
 3. Create a pointer array called matrix_ptr with row_input1 elements
@@ -64,7 +64,7 @@ To get two matrixes as input from the user and perform matrix addition and matri
 12. If the choice is 1, perform matrix addition by calling the function matrix_addition() and passing it the required parameters
 13. If the choice is 2, perform matrix multiplication by calling the function matrix_multiplication() and passing it the required parameters
 
-## CODE
+## CODE:
 ```c
 #include <stdio.h>
 
@@ -160,7 +160,7 @@ int main() {
     }
 }
 ```
-## OUTPUT
+## OUTPUT:
 ```
 aditya@LAPTOP:~$ gcc matrix_operations.c -o matrix_operations
 aditya@LAPTOP:~$ ./matrix_operations
@@ -185,19 +185,19 @@ The matrix is:
 10 12
 ```
 
-## RESULT
+## RESULT:
 The user will be able to get two matrixes as input and perform matrix addition and matrix multiplication on them. The result of the operation will be printed to the screen.
 
 <div style="page-break-after: always"></div>
 
-## AIM
+## AIM:
 To get an array of elements, reverse it and print it to the user.
-## ALGORITHM
+## ALGORITHM:
 1. Get the length of the array from the user and then get the elements of the array from the user.
 2. Reverse the array by storing each element of the original array at the corresponding position in the 4.reversed array starting from the last element.
 3. Print the reversed array to the user.
 
-## CODE
+## CODE:
 ```c
 int main() {
     int array[100], array_reverse[100], array_length;
@@ -217,7 +217,7 @@ int main() {
     return 0;
 }
 ```
-## OUTPUT
+## OUTPUT:
 ```
 aditya@LAPTOP:~$ gcc array_reverse.c -o array_reverse
 aditya@LAPTOP:~$ ./array_reverse
@@ -231,7 +231,7 @@ Enter the element at index 4: 5
 The reversed array is: 5 4 3 2 1
 ```
 
-## RESULT
+## RESULT:
 An array of elements will be obtained from the user, reversed and printed to the user.
 
 <div style="page-break-after: always"></div>
@@ -359,14 +359,14 @@ The program will take an array as input from the user, apply bubble sort if requ
 ## AIM:
 To find if a given substring is present in a given string and if it is present, to find the number of occurrences of the substring in the string.
 
-## ALGORITHM
+## ALGORITHM:
 1. Initialize two variables: `string_length` to store the length of the given string and `substring_counter` to store the number of occurrences of the substring in the string. Initialize `length` to the length of the given string and `substring_length` to the length of the given substring.
 2. Use a loop to iterate through the characters of the given string.
 3. If the current character of the string is equal to the first character of the substring, use another loop to check if the characters following the current character in the string match the characters of the substring.
 4. If all the characters match, increment the `substring_counter` by 1 and continue the loop. If the characters do not match, break the loop and continue with the outer loop.
 5. After the loops, check if the `substring_counter` is equal to 0. If it is, print that the substring is not present in the string. If it is not equal to 0, print that the substring is present in the string and the number of occurrences.
 
-## CODE
+## CODE:
 ```c
 #include <stdio.h>
 
@@ -416,7 +416,7 @@ int main() {
 }
 ```
 
-## OUTPUT
+## OUTPUT:
 ```
 aditya@LAPTOP:~$ gcc substring.c -o substring
 aditya@LAPTOP:~$ ./substring
@@ -425,7 +425,7 @@ Enter the substring: llo
 The substring is present in the string 1 times
 ```
 
-## RESULT
+## RESULT:
 The program will find if a given substring is present in a given string and if it is present, the number of occurrences of the substring in the string.
 
 <div style="page-break-after: always"></div>
@@ -666,10 +666,10 @@ The given string is reversed and printed on the screen.
 
 <div style="page-break-after: always"></div>
 
-## AIM
+## AIM:
 To implement a function that compares two strings ignoring case sensitivity and returns 1 if the strings are equal.
 
-## ALGORITHM
+## ALGORITHM:
 1. Define a function `string_compare(char *string1, char *string2)` that takes in two strings as input also initialize a variable i to 0.
 2. Using a `while` loop, iterate through the characters of the two strings and compare them using the `tolower()` function.
 3. If the characters at the `i`th position in both strings are equal, increment `i` and continue the loop.
@@ -679,7 +679,7 @@ To implement a function that compares two strings ignoring case sensitivity and 
 7. Call the `string_compare()` function with `string1` and `string2` as arguments and store the result in a variable `result`.
 8. Based on the value of `result`, print the appropriate message indicating the comparison result.
 
-## CODE
+## CODE:
 ```c
 #include <stdio.h>
 #include <ctype.h>
@@ -719,7 +719,7 @@ int main() {
 
 }
 ```
-## OUTPUT
+## OUTPUT:
 ```
 aditya@LAPTOP:~$ gcc string_compare.c -o string_compare
 aditya@LAPTOP:~$ ./string_compare
@@ -728,7 +728,7 @@ Enter the second string: ADITYA
 The strings are equal
 ```
 
-## RESULT
+## RESULT:
 The function `string_compare()` will compare the two input strings ignoring case sensitivity and return 1 if they are equal, 0 if the first string is shorter than the second string, and -1 if the second string is shorter than the first string.
 
 

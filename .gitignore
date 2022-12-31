@@ -3,3 +3,4 @@ builds/strings_and_arrays/*.exe
 builds/functions_and_recursion/*.exe
 builds/*.exe
 *.pdf
+*.txt
