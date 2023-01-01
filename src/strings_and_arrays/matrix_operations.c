@@ -3,9 +3,7 @@ Write a program to get two matrixes from the user and apply matrix addition
 and matrix multiplication on them
 */
 
-
 #include <stdio.h>
-
 
 int get_matrix_input(int rows, int cols, int *array_val[]) {
     for (int i=0; i<rows; i++) {         
@@ -53,7 +51,6 @@ void matrix_multiplication(int row1, int col1, int row2, int col2, int *array_va
     }
 }
 
-
 int main() {
     int row_input1, column_input1, row_input2, column_input2;
     printf("Enter the number of rows for the first matrix: ");
@@ -77,7 +74,6 @@ int main() {
         matrix2_ptr[i] = matrix2[i];
     }
     get_matrix_input(row_input2, column_input2, matrix2_ptr);
-
     printf("What operations do you want to perform on the two matrices? \n");
     printf("1. Addition \n");
     printf("2. Multiplication \n");
@@ -94,7 +90,14 @@ int main() {
         print_matrix(row_input1, column_input1, matrix3_ptr);
     }
     else if (choice == 2) {
-        printf("Multiplication not implemented yet");
+        int matrix3[row_input1][column_input2];
+        int *matrix3_ptr[row_input1];
+        for (int i=0; i<row_input1; i++) {
+            matrix3_ptr[i] = matrix3[i];
+        }
+        matrix_multiplication(row_input1, column_input1, row_input2, column_input2, matrix_ptr, matrix2_ptr, matrix3_ptr);
+        printf("The matrix is: \n");
+        print_matrix(row_input1, column_input2, matrix3_ptr);
     }
     else {
         printf("Invalid choice");
