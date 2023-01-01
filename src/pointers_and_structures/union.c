@@ -7,7 +7,7 @@ Each number may be stored and retrieved in any of the above formats depending on
 
 #include <stdio.h>
 #include <stdlib.h>
-struct Number {
+union Number {
     char number[100];
     int num;
     float fnum;
@@ -20,7 +20,7 @@ int main() {
     int number_counter = 0, num_counter = 0, fnum_counter = 0, dnum_counter = 0;
     printf("Enter the size of  the array: ");
     scanf("%d", &size);
-    struct Number numbers[size];
+    union Number numbers[size];
     printf("Enter %d numbers: \n", size);
     for (int i=0; i<size; i++) {
         printf("Enter the type of number you want to store:\n");
