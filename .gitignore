@@ -1,6 +1,8 @@
 builds/loops/*.exe
 builds/strings_and_arrays/*.exe
 builds/functions_and_recursion/*.exe
+builds/pointers_and_structures/*.exe
+builds/file_handling/*.exe
 builds/*.exe
 *.pdf
 *.txt
