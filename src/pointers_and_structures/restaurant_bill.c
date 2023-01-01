@@ -10,6 +10,12 @@ c) Cost of the item (in Rupees)
 At the end of the day, all the slips are consolidated.
 Write a program to read the information from each slip and summarize the data into a table (2D array).
 Print the results in tabular format with each column representing a waiter and each row representing an item.
+```
+            Sugin Aditya  Total
+Leone        3     0       3*cost of leone
+Horse        8     7       15*cost of horse 
+Total        11    7       addition of all the rows
+```
 Total each row to find the total sales (in Rupees) of an item on that day.
 Total each column to find the total sales (in Rupees) by each waiter. 
 Column totals should be printed below each column and row totals should be printed to the right of each row.
@@ -54,8 +60,6 @@ void addItem(struct Item *items, int *size) {
     printf("Enter the name of the item: ");
     scanf("%s", items[*size].name);
     items[*size].id = *size + 1;
-    printf("Enter the price of the item: ");
-    scanf("%f", &items[*size].price);
     *size += 1;
     printf("Item added successfully\n\n");
 }
@@ -98,56 +102,46 @@ void printBills(struct Bill *bills, int size) {
     printf("\n");
 }
 
-// FIX: This function is not working properly and I don't know why
+void line() {
+    printf("\n------------------------------------------------------------------\n"); 
+    
+}
+
 void printSummary(struct Bill *bills, int size, struct waiter *waiters, int waiter_size, struct Item *items, int item_size) {
     float summary[item_size][waiter_size];
+    line();
+    for (int i=0; i<item_size; i++) {
+        for (int j=0; j<waiter_size; j++) {
+            summary[i][j] = 0;
+        }
+    }
+    
     for (int i=0; i<size; i++) {
         summary[bills[i].item_id-1][bills[i].waiter_id-1] += bills[i].cost;
     }
-    printf("\t\t");
-    /*
-      printf("\t\t");
-  for (int i = 0; i < NUM_WAITERS; i++) {
-    printf("Waiter %d\t", i + 1);
-  }
-  printf("Total\n");
-  for (int i = 0; i < NUM_ITEMS; i++) {
-    printf("Item %d\t", i + 1);
-    float row_total = 0;
-    for (int j = 0; j < NUM_WAITERS; j++) {
-      printf("%.2f\t\t", summary[j][i]);
-      row_total += summary[j][i];
-    }
-    printf("%.2f\n", row_total);
-  }
-  printf("Total\t\t");
-  for (int i = 0; i < NUM_WAITERS; i++) {
-    float col_total = 0;
-    for (int j = 0; j < NUM_ITEMS; j++) {
-      col_total += summary[i
-        
-    */
-    printf("Waiter\t");
+    
+    printf("\tWaiter\t");
     for (int i=0; i<waiter_size; i++) {
-        printf("%s\t", waiters[i].name);
+        printf("\t%s\t", waiters[i].name);
     }
-    printf("Total\n");
+    line();
+    
     for (int i=0; i<item_size; i++) {
-        printf("%s\t", items[i].name);
+        printf("\t%s\t", items[i].name);
         float total = 0;
         for (int j=0; j<waiter_size; j++) {
-            printf("%f\t", summary[i][j]);
+            printf("\t%0.2f\t", summary[i][j]);
             total += summary[i][j];
         }
-        printf("%f\n", total);
+        printf("\t%0.2f\n", total);
     }
-    printf("Total\t");
+    printf("\tTotal\t");
     for (int i=0; i<waiter_size; i++) {
         float total = 0;
         for (int j=0; j<item_size; j++) {
             total += summary[j][i];
         }
-        printf("%f\t", total);
+        printf("\t%0.2f\t", total);
     }
     printf("\n");
 }

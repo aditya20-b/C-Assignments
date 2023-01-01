@@ -53,7 +53,7 @@ int main() {
                 break;
         }
     }
-    printf("The numbers are: ");
+    printf("The numbers are:\n");
     if (number_counter > 0) {
         printf("The string numbers are: ");
         for (int i = 0; i < number_counter; i++) {
@@ -61,7 +61,7 @@ int main() {
         }
     }
     if (num_counter > 0) {
-        printf("The integer numbers are: ");
+        printf("The integer numbers are:");
         for (int i = number_counter; i < number_counter+num_counter; i++) {
             printf("\n%d ", numbers[i].num);
         }
