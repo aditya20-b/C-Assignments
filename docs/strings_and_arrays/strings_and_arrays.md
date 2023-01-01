@@ -153,13 +153,23 @@ int main() {
         print_matrix(row_input1, column_input1, matrix3_ptr);
     }
     else if (choice == 2) {
-        printf("Multiplication not implemented yet");
+        int matrix3[row_input1][column_input2];
+        int *matrix3_ptr[row_input1];
+        for (int i=0; i<row_input1; i++) {
+            matrix3_ptr[i] = matrix3[i];
+        }
+        matrix_multiplication(row_input1, column_input1, row_input2, column_input2, matrix_ptr, matrix2_ptr, matrix3_ptr);
+        printf("The matrix is: \n");
+        print_matrix(row_input1, column_input2, matrix3_ptr);
     }
     else {
         printf("Invalid choice");
     }
 }
 ```
+
+<div style="page-break-after: always"></div>
+
 ## OUTPUT:
 ```
 aditya@LAPTOP:~$ gcc matrix_operations.c -o matrix_operations
